@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Thilo",
+      "password": "1234",
+      "tasks": [
+        {
+          "title": "Kaffe kochen",
+          "is_completed": false
+        },
+        {
+          "title": "Kaffe trinken",
+          "is_completed": false
+        },
+        {
+          "title": " Noch mehr Kaffe kochen",
+          "is_completed": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Juri",
+      "password": "moin"
+    },
+    {
+      "id": 3,
+      "name": "Klauser",
+      "password": "1234"
+    }
+  ]
+}
