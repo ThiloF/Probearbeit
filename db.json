@@ -7,14 +7,17 @@
       "tasks": [
         {
           "title": "Kaffe kochen",
+          "comment": "test",
           "is_completed": false
         },
         {
           "title": "Kaffe trinken",
+          "comment": "test",
           "is_completed": false
         },
         {
           "title": " Noch mehr Kaffe kochen",
+          "comment": "test",
           "is_completed": false
         }
       ]

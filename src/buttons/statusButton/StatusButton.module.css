@@ -1,0 +1,9 @@
+.isCompleted{
+    background-color: blue;
+    color: white;
+}
+
+.notCompleted{
+    background-color: red;
+    color: white;
+}
