@@ -8,16 +8,26 @@
         {
           "title": "Kaffe kochen",
           "comment": "test",
-          "is_completed": false
+          "is_completed": true
         },
         {
           "title": "Kaffe trinken",
           "comment": "test",
-          "is_completed": false
+          "is_completed": true
         },
         {
           "title": " Noch mehr Kaffe kochen",
           "comment": "test",
+          "is_completed": false
+        },
+        {
+          "title": "Moin",
+          "comment": "Moin MOin",
+          "is_completed": false
+        },
+        {
+          "title": "Moin",
+          "comment": "Moin MOin",
           "is_completed": false
         }
       ]
