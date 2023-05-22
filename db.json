@@ -6,23 +6,8 @@
       "password": "1234",
       "tasks": [
         {
-          "title": "Kaffe kochen",
-          "comment": "test",
-          "is_completed": true
-        },
-        {
-          "title": "Kaffe trinken",
-          "comment": "test",
-          "is_completed": true
-        },
-        {
           "title": " Noch mehr Kaffe kochen",
           "comment": "test",
-          "is_completed": false
-        },
-        {
-          "title": "Moin",
-          "comment": "Moin MOin",
           "is_completed": false
         },
         {
@@ -35,12 +20,25 @@
     {
       "id": 2,
       "name": "Juri",
-      "password": "moin"
+      "password": "moin",
+      "tasks": [
+        {
+          "title": "Kunden anrufen",
+          "comment": "palim palum",
+          "is_completed": false
+        },
+        {
+          "title": "Kunden anrufen",
+          "comment": "palim palum",
+          "is_completed": false
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Klauser",
-      "password": "1234"
+      "password": "1234",
+      "tasks": []
     }
   ]
 }

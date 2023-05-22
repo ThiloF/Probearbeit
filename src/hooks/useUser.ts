@@ -7,7 +7,7 @@ const useUser = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     
-    const queryUser = async (name: string) => {
+    const queryUser = async (name: string, password:string) => {
         setLoading(true)
         setError(false)
 
@@ -15,7 +15,7 @@ const useUser = () => {
             const {data} = await api.get<Array<User>>(
             `/users?name=${name}`
             )
-            if(!(data && data.length)) throw new Error("Username not found")
+            if(!(data && data.length && data[0].password !== "password")) throw new Error("Username not found")
             setData(data[0])
         }catch(error){
             setError(true)
