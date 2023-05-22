@@ -4,6 +4,7 @@ import "./App.css";
 import TaskController from "./taskmanager/container/TaskController";
 import { useState } from "react";
 import LoginForm from "./login/LoginForm";
+import Header from "./header/Header";
 
 function App() {
   const { responseData, queryUser} = useUser();
@@ -24,8 +25,7 @@ function App() {
 
   return (
     <div>
-      <h1>Moin</h1>
-
+      <Header headTitle="Probearbeit"></Header>
       <LoginForm handleLogin={handleLogin} />
       {loggedIn ? (
         <TaskController loggedUser={responseData} />

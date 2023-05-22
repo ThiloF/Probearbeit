@@ -36,7 +36,8 @@ export default function AddTask({ loggedUser }: Props) {
 
   return (
     <div className={Styling.AddTaskContainer}>
-      <form onSubmit={(e) => handleOnSubmit(e)}>
+      <h2>Neue Aufgabe </h2>
+      <form className={Styling.formContainer} onSubmit={(e) => handleOnSubmit(e)}>
         <label htmlFor="TaskTitle"> Titel </label>
         <input
           type="text"

@@ -1,5 +1,5 @@
-import {  useState } from "react";
-import Styling from "./LoginForm.module.css";
+import { useState } from "react";
+import Styling from "./SignIn.module.css";
 
 type Props = {
   handleLogin: (name: string, password: string) => void;
@@ -24,14 +24,14 @@ export default function LoginForm({ handleLogin }: Props) {
 
   return (
     <div className={Styling.container}>
-      <h2> SignIn</h2>
+        <h2>SignIn </h2>
       <form className={Styling.formContainer} onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="name">
-          Name: 
+          Name
           <input type="text" name="name" onChange={(e) => handleName(e)} />
         </label>
         <label htmlFor="password">
-          Passwort:   
+          Password
           <input
             type="text"
             name="password"
