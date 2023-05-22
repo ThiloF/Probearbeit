@@ -1,10 +1,9 @@
 import Styling from "./TaskController.module.css";
 import { User } from "../../types/User";
 import DisplayTasks from "../components/DisplayTasks/DisplayTasks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useUser from "../../hooks/useUser";
 import AddTask from "../components/AddTask/AddTask";
-
 
 type Props = {
   loggedUser: User;
@@ -14,6 +13,7 @@ export default function TaskController({ loggedUser }: Props) {
   const [upDatedTask, setUpdDatedTask] = useState<string>("");
   const [status, setStatus] = useState<boolean>(true);
   const { putUser } = useUser();
+  const [taskAdded, setTaskAdded] = useState<boolean>();
 
   function updateTaskList() {
     const update = loggedUser.tasks.map((task) => {
@@ -41,21 +41,30 @@ export default function TaskController({ loggedUser }: Props) {
     console.log(loggedUser.tasks);
   }
 
-  const taskList = loggedUser.tasks.map((item, index) => {
-    return (
-      <DisplayTasks
-        key={index}
-        task={item}
-        update={handleUpdateStatus}
-        deleter={deleteTask}
-      />
-    );
-  });
+  useEffect(() =>{
+    setTaskAdded(false);
+  },[taskAdded]);
+
+  function getTasklist() {
+    
+    const taskList = loggedUser.tasks.map((item, index) => {
+      return (
+        <DisplayTasks
+          key={index}
+          task={item}
+          update={handleUpdateStatus}
+          deleter={deleteTask}
+        />
+      );
+    });
+    return taskList
+  }
 
   return (
     <div className={Styling.container}>
-      <AddTask loggedUser={loggedUser} />
-      {taskList}{" "}
+      <AddTask loggedUser={loggedUser}  updateList={setTaskAdded}/>
+      {getTasklist()}
+      
     </div>
   );
 }

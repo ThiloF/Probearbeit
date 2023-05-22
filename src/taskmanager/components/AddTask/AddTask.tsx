@@ -5,9 +5,10 @@ import useUser from "../../../hooks/useUser";
 
 type Props = {
   loggedUser: User;
+  updateList: (handleAdd: boolean) => void;
 };
 
-export default function AddTask({ loggedUser }: Props) {
+export default function AddTask({ loggedUser, updateList }: Props) {
   const [newTitle, setNewTitle] = useState<string>("");
   const [newComment, setNewComment] = useState<string>("");
   const { putTask } = useUser();
@@ -24,6 +25,7 @@ export default function AddTask({ loggedUser }: Props) {
     e.preventDefault();
     addTask();
     putTask(loggedUser);
+    updateList(true);
   }
 
   function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -55,8 +57,7 @@ export default function AddTask({ loggedUser }: Props) {
         <button type="submit" id="Speichern">
           Speichern
         </button>
-        <p>{newTitle}</p> <br />
-        <p>{newComment}</p>
+      
       </form>
     </div>
   );

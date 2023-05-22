@@ -9,11 +9,6 @@
           "title": " Noch mehr Kaffe kochen",
           "comment": "test",
           "is_completed": false
-        },
-        {
-          "title": "Moin",
-          "comment": "Moin MOin",
-          "is_completed": false
         }
       ]
     },

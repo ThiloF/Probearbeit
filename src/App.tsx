@@ -26,11 +26,11 @@ function App() {
   return (
     <div>
       <Header headTitle="Probearbeit"></Header>
-      <LoginForm handleLogin={handleLogin} />
       {loggedIn ? (
         <TaskController loggedUser={responseData} />
-      ) : (
-        <p>"Ja ne is kllar"</p>
+        ) : (
+        <LoginForm handleLogin={handleLogin} />
+      
       )}
     </div>
   );
