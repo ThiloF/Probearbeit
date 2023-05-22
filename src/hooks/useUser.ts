@@ -51,6 +51,32 @@ const useUser = () => {
         }
     }
 
+    const postUser = async (formData: User) => {
+        setLoading(true)
+        setError(false)
+
+        try {
+            const { data } = await api.get<Array<User>>(`/users?name=${formData.name}`)
+            if (data.length !== 0) throw new Error("Username already exists")
+
+            try {
+                const { data } = await api.post<User>("/users", {
+                    name: formData.name,
+                    password: formData.password,
+                    tasks: formData.tasks
+                })
+                if (!data) throw new Error("User was not found")
+                setData(data)
+            } catch (error) {
+                setError(true)
+            }
+        } catch (error) {
+            setError(true)
+        } finally {
+            setLoading(false)
+        }
+    }
+
 
     const putTask = async (newData: User) =>{
         setLoading(true)
@@ -78,6 +104,10 @@ const useUser = () => {
         }
     }
 
+    function clear(){
+        setData({id:0, name:"", password:"", tasks:[]});
+    }
+
     return {
         responseData,
         loading,
@@ -85,6 +115,8 @@ const useUser = () => {
         queryUser,
         putUser,
         putTask,
+        postUser,
+        clear
     }
 }
 

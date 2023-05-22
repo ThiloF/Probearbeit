@@ -24,7 +24,7 @@ export default function LoginForm({ handleLogin }: Props) {
 
   return (
     <div className={Styling.container}>
-      <h2> SignIn</h2>
+      <h2> LogIn</h2>
       <form className={Styling.formContainer} onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="name">
           Name: 

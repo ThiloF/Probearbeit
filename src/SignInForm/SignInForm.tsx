@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Styling from "./SignIn.module.css";
+import Styling from "./SignInForm.module.css";
 
 type Props = {
-  handleLogin: (name: string, password: string) => void;
+  handleSignIn: (name: string, password: string) => void;
+  handleLoggedIn: (status: boolean) => void;
 };
 
-export default function LoginForm({ handleLogin }: Props) {
+export default function SignInForm({ handleSignIn, handleLoggedIn}: Props) {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -19,7 +20,8 @@ export default function LoginForm({ handleLogin }: Props) {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    handleLogin(name, password);
+    handleSignIn(name, password);
+    handleLoggedIn(true);
   }
 
   return (
